@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante - Ticket</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>🍽️ Restaurante</h1>
+        <nav>
+            <a href="index.html">Menú</a>
+            <a href="ticket.html">Ticket</a>
+            <a href="ventas.html">Ventas</a>
+        </nav>
+    </header>
+
+    <main>
+      
+        <section id="vistaTicket" class="vista activa">
+            <h2>Ticket Actual</h2>
+            <div id="ticket"></div>
+            <h3>Total: $<span id="total">0</span></h3>
+
+            <div class="acciones">
+                <button id="btnCancelar">Cancelar Producto</button>
+                <button id="btnCobrar">Cobrar</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
