@@ -1,4 +1,13 @@
-let productos = [];
+//codigo de supervisor: 1234
+
+let productos = [
+    { nombre: "Hamburguesa", precio: 85, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4YDCJqgMFtsD9dBn2uch0RTrROXHmvr1vnw&s" },
+    { nombre: "Pizza", precio: 120, imagen: "https://assets.surlatable.com/m/15a89c2d9c6c1345/72_dpi_webp-REC-283110_Pizza.jpg" },
+    { nombre: "Tacos", precio: 60, imagen: "https://familiakitchen.com/wp-content/uploads/2021/01/iStock-960337396-3beef-barbacoa-tacos-e1695391119564.jpg" },
+    { nombre: "Refresco", precio: 25, imagen: "https://superlavioleta.com/cdn/shop/products/REFRESCOCOCACOLA600.jpg?v=1753107287" },
+    { nombre: "Postre", precio: 50, imagen: "https://www.paulinacocina.net/wp-content/uploads/2024/01/receta-de-postre-de-maracuya-Paulina-Cocina-Recetas-1722251880.jpg" }
+];
+
 let ticket = JSON.parse(localStorage.getItem("ticket")) || [];
 let ventas = JSON.parse(localStorage.getItem("ventas")) || [];
 const pagina = window.location.pathname;
@@ -57,36 +66,9 @@ function mostrarVentas() {
     }
 }
 
-// Menú
+// MenÃº
 if (pagina.includes("index.html") || pagina.endsWith("/")) {
-    const nombreProducto = document.getElementById("nombreProducto");
-    const precioProducto = document.getElementById("precioProducto");
-    const imagenProducto = document.getElementById("imagenProducto");
-    const btnAgregar = document.getElementById("btnAgregar");
     const listaProductos = document.getElementById("listaProductos");
-
-    btnAgregar.onclick = function () {
-        const nombre = nombreProducto.value.trim();
-        const precio = parseFloat(precioProducto.value);
-        const imagen = imagenProducto.value.trim();
-
-        if (nombre === "" || isNaN(precio) || precio <= 0) {
-            alert("Datos inválidos");
-            return;
-        }
-
-        const nuevo = {
-            nombre: nombre,
-            precio: precio,
-            imagen: imagen === "" ? "" : imagen
-        };
-
-        productos.push(nuevo);
-        nombreProducto.value = "";
-        precioProducto.value = "";
-        imagenProducto.value = "";
-        mostrarProductos();
-    };
 
     function mostrarProductos() {
         listaProductos.innerHTML = "";
@@ -127,7 +109,7 @@ if (pagina.includes("index.html") || pagina.endsWith("/")) {
         }
 
         guardarTicket();
-        alert("Producto agregado al ticket.");
+       
     }
 
     mostrarProductos();
@@ -168,7 +150,7 @@ if (pagina.includes("ticket.html")) {
         ventas.push(venta);
         localStorage.setItem("ventas", JSON.stringify(ventas));
 
-        alert("Venta realizada con éxito.");
+        alert("Venta realizada con Ã©xito.");
         ticket = [];
         localStorage.removeItem("ticket");
         mostrarTicket();
